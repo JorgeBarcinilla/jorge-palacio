@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
+/**
+ *
+ */
 @Component({
-  selector: 'app-education',
   imports: [],
+  selector: 'app-education',
+  styleUrl: './education.css',
   templateUrl: './education.html',
-  styleUrl: './education.css'
 })
-export class Education {
-
-}
+export class Education {}

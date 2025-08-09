@@ -5,6 +5,7 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
+// eslint-disable-next-line import/no-nodejs-modules
 import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
@@ -29,8 +30,8 @@ const angularApp = new AngularNodeAppEngine();
  */
 app.use(
   express.static(browserDistFolder, {
-    maxAge: '1y',
     index: false,
+    maxAge: '1y',
     redirect: false,
   }),
 );
@@ -58,6 +59,7 @@ if (isMainModule(import.meta.url)) {
       throw error;
     }
 
+    // eslint-disable-next-line no-console
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }

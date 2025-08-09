@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngular, faFlutter } from '@fortawesome/free-brands-svg-icons';
 
+/**
+ *
+ */
 @Component({
+  imports: [FontAwesomeModule],
   selector: 'app-hero',
-  imports: [
-    FontAwesomeModule,
-  ],
+  styleUrl: './hero.css',
   templateUrl: './hero.html',
-  styleUrl: './hero.css'
 })
 export class Hero {
   faAngular = faAngular;

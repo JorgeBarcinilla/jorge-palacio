@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
+/**
+ *
+ */
 @Component({
-  selector: 'app-experience',
   imports: [],
+  selector: 'app-experience',
+  styleUrl: './experience.css',
   templateUrl: './experience.html',
-  styleUrl: './experience.css'
 })
-export class Experience {
-
-}
+export class Experience {}

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Browser } from './browser';
+import { BrowserService } from './browser';
 
 describe('Browser', () => {
-  let service: Browser;
+  let service: BrowserService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Browser);
+    service = TestBed.inject(BrowserService);
   });
 
   it('should be created', () => {

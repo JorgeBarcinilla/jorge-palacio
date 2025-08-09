@@ -1,13 +1,20 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 
+/**
+ *
+ */
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BrowserService {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  private _platformId = inject(PLATFORM_ID);
 
+  /**
+   * Determina si la aplicación se está ejecutando en un navegador
+   * @returns {boolean} - Verdadero si está en un navegador, falso en caso contrario
+   */
   isBrowser(): boolean {
-    return isPlatformBrowser(this.platformId);
+    return isPlatformBrowser(this._platformId);
   }
 }

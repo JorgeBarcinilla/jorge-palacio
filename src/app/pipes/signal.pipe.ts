@@ -1,10 +1,18 @@
 import { Pipe, PipeTransform, Signal } from '@angular/core';
 
+/**
+ *
+ */
 @Pipe({
   name: 'callSignal',
-  standalone: true // si usas Angular 15+ con standalone components
+  standalone: true, // si usas Angular 15+ con standalone components
 })
 export class CallSignalPipe implements PipeTransform {
+  /**
+   * Transforma un Signal en su valor actual
+   * @param {Signal<T>} signal - El Signal a transformar
+   * @returns {T} - El valor actual del Signal
+   */
   transform<T>(signal: Signal<T>): T {
     return signal();
   }

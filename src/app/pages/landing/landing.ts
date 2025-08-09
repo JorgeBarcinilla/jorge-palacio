@@ -1,16 +1,19 @@
 import { Component, HostListener } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { Navbar } from "../../shared/components/navbar/navbar";
-import { About } from "./sections/about/about";
-import { Contact } from "./sections/contact/contact";
-import { Education } from "./sections/education/education";
-import { Experience } from "./sections/experience/experience";
-import { Hero } from './sections/hero/hero';
-import { Skills } from "./sections/skills/skills";
 
+import { Navbar } from '../../shared/components/navbar/navbar';
+import { About } from './sections/about/about';
+import { Contact } from './sections/contact/contact';
+import { Education } from './sections/education/education';
+import { Experience } from './sections/experience/experience';
+import { Hero } from './sections/hero/hero';
+import { Skills } from './sections/skills/skills';
+
+/**
+ * Componente de la página de inicio
+ */
 @Component({
-  selector: 'app-landing',
   imports: [
     Hero,
     About,
@@ -19,22 +22,29 @@ import { Skills } from "./sections/skills/skills";
     Contact,
     Education,
     FontAwesomeModule,
-    Navbar
-],
+    Navbar,
+  ],
+  selector: 'app-landing',
+  styleUrl: './landing.css',
   templateUrl: './landing.html',
-  styleUrl: './landing.css'
 })
 export class Landing {
   faArrowUp = faArrowUp;
   showScrollTop = false;
 
+  /**
+   * Detecta el scroll y muestra el botón de volver arriba
+   */
   @HostListener('window:scroll', [])
   onScroll(): void {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
     this.showScrollTop = scrollY > window.innerHeight * 0.8;
   }
 
+  /**
+   * Desplaza la ventana al inicio de la página con animación suave
+   */
   scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ behavior: 'smooth', top: 0 });
   }
 }
