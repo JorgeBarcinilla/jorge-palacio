@@ -1,0 +1,30 @@
+@keyframes loopLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes loopRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+.animate-loopLeft {
+  animation: loopLeft 40s linear infinite;
+}
+.animate-loopRight {
+  animation: loopRight 40s linear infinite;
+}
+
+/* Pausa al hacer hover */
+.group:hover .animate-loopLeft,
+.group:hover .animate-loopRight {
+  animation-play-state: paused;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out both;
+}

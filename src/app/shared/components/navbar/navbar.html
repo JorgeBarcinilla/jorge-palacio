@@ -1,0 +1,17 @@
+<nav [ngClass]="{
+      'sticky top-0 left-0 w-full bg-gray-600/20  px-12 backdrop-blur-md shadow-xl': isSticky,
+      'absolute top-[85vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/20 border border-white/10 shadow-2xl backdrop-blur-3xl rounded-4xl w-max': !isSticky
+    }"  class="hidden sm:flex  justify-between items-center z-50" id="navbar">
+    @if (isSticky) {
+      <div class="h-16 w-16 bg-gradient-to-r from-red-500 to-blue-500 mask mask-image" style="mask-image: url('logos/app/jp.svg'); mask-repeat: no-repeat; mask-size: contain;">
+    </div>
+    }
+  <div class="p-2 text-center text-white divide-white/10 divide-x  flex-row items-center">
+    @for (item of menuItems; track $index) {
+      @if (item.link != '#hero' || isSticky) {
+        <a class="px-4 py-2 inline-flex items-center gap-2 cursor-pointer
+               transform transition-transform duration-300 hover:scale-110" [href]="item.link"> <fa-icon [icon]="item.icon" [style]="'color:'+item.color+'!important'"></fa-icon> {{ item.label }}</a>
+      }
+    }
+  </div>
+</nav>
