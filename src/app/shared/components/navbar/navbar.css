@@ -1,0 +1,37 @@
+/* Animación radial que “nace” del botón */
+.mobile-overlay {
+  clip-path: circle(0 at var(--x) var(--y));
+  transition: clip-path 520ms cubic-bezier(0.22, 0.95, 0.51, 1);
+}
+.mobile-overlay.open {
+  /* 150% suele cubrir cualquier viewport; ajusta si tu UI es muy grande */
+  clip-path: circle(150% at var(--x) var(--y));
+}
+
+/* Stagger sutil para elementos del menú */
+.mobile-overlay.open .item {
+  animation: fadeUp 0.45s ease-out forwards;
+}
+.mobile-overlay.open .item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-overlay.open .item:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.mobile-overlay.open .item:nth-child(3) {
+  animation-delay: 0.22s;
+}
+.mobile-overlay.open .item:nth-child(4) {
+  animation-delay: 0.28s;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
