@@ -31,7 +31,7 @@
     [appScrollScaleMax]="1"
     [appScrollScaleSensitivity]="0.0035"
     [appScrollScaleDecay]="0.9"
-    [appScrollScaleSmoothing]="0.2"
+    [appScrollScaleSmoothing]="0.1"
     class="sm:hidden h-40 w-40 bg-gradient-to-r from-red-500 to-blue-500 mask mask-image"
     style="
       mask-image: url(&quot;logos/app/jp.svg&quot;);
@@ -89,7 +89,7 @@
     @for (item of menuItems; track $index) {
       @if (item.link !== "#hero" || isSticky) {
         <a
-          class="w-full sm:w-auto px-4 py-6 sm:py-2 inline-flex items-center gap-2 cursor-pointer transform transition-transform duration-300 hover:scale-110 hover:sm:scale-100 text-2xl sm:text-base text-startd"
+          class="w-full sm:w-auto px-4 py-6 sm:py-2 inline-flex items-center gap-2 cursor-pointer transform transition-transform duration-300 hover:scale-110 hover:sm:scale-100 text-lg sm:text-base text-startd"
           [ngClass]="{
             'text-purple-200': currentUrl === item.link,
           }"
